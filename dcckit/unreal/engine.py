@@ -33,6 +33,18 @@ def get_installed_engine_versions():
     return ue_versions
 
 
+def find_engine_root(engine_association):
+    """
+    Finds the root directory for an engine from the name as stored in the registry
+    :param <str:guid_string> The guid to search for
+    :return <str:dir> The path to the engine root directory - None if not found
+    """
+    all_installed_engines = get_installed_engine_versions()
+    if engine_association in all_installed_engines:
+        return all_installed_engines[engine_association]
+    return None
+
+
 class UEngine(object):
     def __init__(self, uengine_root: str):
         """
