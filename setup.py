@@ -26,10 +26,9 @@ setup(
     package_dir={"dcckit": "dcckit"},
     install_requires=[
         "numpy",
+        "pythonnet",
+        "qtpy",
         "scipy",
-        "wgpu",
-        "PILLOW",
-        "matplotlib"
     ],
     include_package_data=True,
     zip_safe=False
