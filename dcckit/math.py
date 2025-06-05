@@ -13,4 +13,4 @@ def lerp(a, b, x):
     Returns:
         float: The interpolated value.
     """
-    return np.lerp(a, b, x)
+    return a + (b - a) * x
