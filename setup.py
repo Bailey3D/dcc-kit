@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name="dcckit",
-    version="0.0.1",
+    version="0.0.2",
     description="Description",
     long_description=readme(),
     classifiers=[
