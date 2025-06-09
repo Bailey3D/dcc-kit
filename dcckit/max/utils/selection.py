@@ -1,5 +1,5 @@
-import pymxs
 import dcckit.max.sdk
+from pymxs import runtime as rt
 
 
 def get_or_pick_selection():
@@ -11,11 +11,11 @@ def get_or_pick_selection():
         list(pymxs.runtime.Node): The node selection
     """
     output = []
-    for i in pymxs.runtime.selection:
+    for i in rt.selection:
         output.append(i)
 
     if (not output):
-        target = pymxs.runtime.pickObject()
+        target = rt.pickObject()
         if (target):
             output = [target]
 
@@ -44,6 +44,6 @@ def pick_node_from_viewport_position(position, inode=False):
     node = interface.PickNode(view_handle, i_point2, filt=None)
 
     if (inode and node):
-        return pymxs.runtime.getNodeByHandle(node.Handle)
+        return rt.getNodeByHandle(node.Handle)
 
     return node
